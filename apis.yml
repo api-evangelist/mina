@@ -1,8 +1,29 @@
 aid: mina
 name: Mina
-description: 'Mina is a company surfaced as a portfolio company of pantera-capital and added to the API
-  Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Mina Protocol is a lightweight, layer-1 blockchain powered by zero-knowledge
+  proofs (zk-SNARKs) that keeps the entire chain a constant ~22KB in size so any
+  device can sync and verify the network. Developers build privacy-preserving
+  smart contracts called zkApps using o1js, a TypeScript zk framework, and the
+  mina-signer library for offline transaction signing. Each Mina daemon (node)
+  exposes a GraphQL API on localhost:3085 for querying node/account/chain state
+  and submitting payments, delegations, and zkApp commands; a Rosetta interface
+  and Archive Node support exchange integration and historical data. Mina uses
+  the Ouroboros Samasika proof-of-stake consensus and is stewarded by the Mina
+  Foundation and o1Labs. Surfaced as a portfolio company of pantera-capital.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://docs.minaprotocol.com/img/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/mina/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +33,33 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Crypto
-apis: []
+- Blockchain
+- Zero-Knowledge
+- zkApps
+- GraphQL
+- Web3
+- Cryptocurrency
+apis:
+- name: Mina Daemon GraphQL API
+  description: >-
+    GraphQL API exposed by a running Mina daemon (node) for querying node, account,
+    and chain state and submitting payments, delegations, and zkApp transactions.
+    Bound to localhost:3085 by default. 41 queries, 29 mutations, 3 subscriptions.
+  humanURL: https://docs.minaprotocol.com/node-developers/graphql-api
+  baseURL: http://localhost:3085/graphql
+  tags:
+  - GraphQL
+  - Blockchain
+  - Node
+  properties:
+  - type: GraphQL
+    url: graphql/mina-graphql-schema.json
+  - type: APIReference
+    url: https://docs.minaprotocol.com/node-developers/graphql-api
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +68,58 @@ maintainers:
 common:
 - type: Website
   url: https://minaprotocol.com/
+- type: DeveloperPortal
+  url: https://docs.minaprotocol.com/
+- type: Documentation
+  url: https://docs.minaprotocol.com/
+- type: GettingStarted
+  url: https://minaprotocol.com/get-started
+- type: Blog
+  url: https://minaprotocol.com/blog
+- type: GitHubOrganization
+  url: https://github.com/MinaProtocol
+- type: Support
+  url: https://bit.ly/MinaDiscord
+- type: PrivacyPolicy
+  url: https://minaprotocol.com/privacy
+- type: TermsOfService
+  url: https://minaprotocol.com/tos
+- type: Packages
+  url: packages/mina-packages.yml
+- type: SDKs
+  url: packages/mina-packages.yml
+- type: LLMsTxt
+  url: llms/mina-llms.txt
+- type: WellKnown
+  url: well-known/mina-well-known.yml
+- type: MCPServer
+  url: mcp/mina-mcp.yml
+- type: CLI
+  url: cli/mina-cli.yml
+- type: Sandbox
+  url: sandbox/mina-sandbox.yml
+- type: Lifecycle
+  url: lifecycle/mina-lifecycle.yml
+- type: ChangeLog
+  url: changelog/mina-changelog.yml
+- type: Conventions
+  url: conventions/mina-conventions.yml
+- type: Authentication
+  url: authentication/mina-authentication.yml
+- type: Conformance
+  url: conformance/mina-conformance.yml
+- type: ErrorCatalog
+  url: errors/mina-problem-types.yml
+- type: DomainSecurity
+  url: security/mina-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/mina-vulnerability-disclosure.yml
+- type: Security
+  url: https://docs.minaprotocol.com/mina-security
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1
