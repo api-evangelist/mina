@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/MinaProtocol/mina/releases
+scheme: semver (daemon) + named network upgrades
+current:
+  daemon: 3.3.0-mainnet
+  o1js: 2.15.0
+  mina_signer: 4.1.0
+docs: https://docs.minaprotocol.com/network-upgrades
+entries:
+  - version: Mesa (network upgrade)
+    breaking: true
+    highlights:
+      - Mainnet network upgrade (hard fork) following Berkeley; all nodes must upgrade.
+  - version: Berkeley (network upgrade)
+    breaking: true
+    highlights:
+      - Transition to the Berkeley proof system.
+      - Introduced zkApps (zero-knowledge smart contracts) via o1js.
+      - Archive database migration required from Devnet/Mainnet to Berkeley schema.
+notes: >-
+  Release history for the daemon lives at github.com/MinaProtocol/mina/releases;
+  o1js maintains its own CHANGELOG at github.com/o1-labs/o1js. Only the recent
+  window of named network upgrades is captured here.

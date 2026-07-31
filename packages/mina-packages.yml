@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.npmjs.com/package/o1js
+packages:
+  - language: javascript
+    registry: npm
+    name: o1js
+    url: https://www.npmjs.com/package/o1js
+    install: npm install o1js
+    version: 2.15.0
+    official: true
+    description: TypeScript framework for zk-SNARKs and zkApps (Mina smart contracts).
+    repository: https://github.com/o1-labs/o1js
+    maintainer: o1Labs
+  - language: javascript
+    registry: npm
+    name: mina-signer
+    url: https://www.npmjs.com/package/mina-signer
+    install: npm install mina-signer
+    version: 4.1.0
+    official: true
+    description: Node API for signing transactions on various networks for Mina Protocol.
+    repository: https://github.com/o1-labs/o1js
+    maintainer: o1Labs

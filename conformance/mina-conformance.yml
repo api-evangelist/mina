@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: derived
+source: graphql/mina-graphql-schema.json
+standards:
+  - id: graphql
+    conforms: true
+    evidence: Daemon exposes a GraphQL API with a published introspection schema (queries/mutations/subscriptions).
+  - id: graphql-introspection
+    conforms: true
+    evidence: Full introspection schema published at graphql_schema.json (210 types).
+  - id: graphql-subscriptions
+    conforms: true
+    evidence: Subscriptions defined (newBlock, newSyncUpdate, chainReorganization).
+  - id: rosetta
+    conforms: true
+    evidence: sendRosettaTransaction mutation present; Mina ships a Coinbase Rosetta implementation for exchange integration.
+  - id: bip44
+    conforms: true
+    evidence: HD account derivation documented (BIP44 Information) and createHDAccount mutation.
+  - id: oauth2
+    conforms: false
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are returned via the GraphQL errors[] array, not application/problem+json.
+  - id: rest
+    conforms: false
+    evidence: API surface is GraphQL over a single HTTP endpoint, not REST resources.

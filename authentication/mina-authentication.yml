@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.minaprotocol.com/node-developers/graphql-api
+summary:
+  types: [none, passphrase-unlock]
+  api_key_in: []
+  oauth2_flows: []
+  model: network-boundary + per-account passphrase
+detail: >-
+  The Mina daemon GraphQL API has no token, API-key, or OAuth authentication.
+  Security is enforced by network boundary: the GraphQL port (3085) binds to
+  localhost by default and only accepts localhost connections unless the operator
+  passes -insecure-rest-server. Individual accounts are protected by a passphrase
+  and must be unlocked (unlockAccount) before they can sign/send transactions,
+  then re-locked (lockAccount). Transaction authorization is cryptographic: each
+  command is signed with the account's private key (see the mina-signer library).
+schemes:
+  - name: network-boundary
+    type: none
+    detail: GraphQL endpoint bound to localhost; exposing it to the internet lets anyone spend from known accounts.
+    sources: [graphql/mina-graphql-schema.json]
+  - name: account-passphrase
+    type: passphrase
+    operations: [unlockAccount, lockAccount, unlockWallet, lockWallet]
+    detail: Accounts are unlocked with a passphrase before signing; MINA_PRIVKEY_PASS supplies it in daemon/sandbox startup.
+    sources: [graphql/mina-graphql-schema.json]
+  - name: transaction-signature
+    type: cryptographic-signature
+    detail: Payments/delegations/zkApp commands are signed with the account private key (mina-signer / o1js).
+    sources: [https://www.npmjs.com/package/mina-signer]

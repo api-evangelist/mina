@@ -1,0 +1,49 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.minaprotocol.com/node-developers/graphql-api
+summary: >-
+  Cross-cutting request/response semantics for the Mina daemon GraphQL API. The
+  API is a single GraphQL endpoint served by a running node, not a hosted REST
+  service, so many SaaS conventions (API keys, pagination cursors, idempotency
+  keys) do not apply.
+protocol:
+  style: GraphQL
+  endpoint: http://localhost:3085/graphql
+  default_port: 3085
+  configurable_port_flag: -rest-port
+  ide: GraphiQL (open the endpoint in a browser)
+  operations:
+    queries: 41
+    mutations: 29
+    subscriptions: 3
+authentication:
+  model: network-boundary
+  detail: >-
+    The GraphQL port is bound to localhost by default. There is no token or API
+    key auth: any client that can reach the port can send Mina from accounts
+    known to the daemon. Accounts are individually locked/unlocked with a
+    passphrase (unlockAccount / lockAccount). The -insecure-rest-server flag
+    opens the endpoint to all interfaces and is explicitly discouraged.
+  cross_reference: authentication/mina-authentication.yml
+pagination:
+  style: bounded-window
+  detail: >-
+    Historical state is not persisted; queries such as bestChain(maxLength: N)
+    return only the last k blocks in the node's transition frontier. Full
+    history requires a separate Archive Node.
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency-key mechanism. Transactions are deduplicated by the network
+    via nonces; a mutation with an already-used nonce is rejected by consensus.
+subscriptions:
+  transport: GraphQL subscriptions (websocket)
+  events: [newBlock, newSyncUpdate, chainReorganization]
+error_envelope:
+  style: GraphQL errors[]
+  detail: Errors are returned in the standard GraphQL top-level errors[] array; there is no RFC 9457 problem+json.
+  cross_reference: errors/mina-problem-types.yml
+versioning:
+  scheme: network-upgrade / hard-fork
+  detail: API and protocol changes ship via named network upgrades (Berkeley, Mesa) and daemon releases.
+  cross_reference: lifecycle/mina-lifecycle.yml

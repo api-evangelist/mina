@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.minaprotocol.com/node-developers/sandbox-node
+name: mina
+description: >-
+  First-party command-line client for interacting with a running Mina daemon /
+  node. Ships inside the Mina daemon Docker container and native packages; used
+  to configure the node, manage accounts, and send transactions.
+install:
+  - method: docker
+    command: docker run --publish 3085:3085 -d --name mina -e RUN_DEMO=true minaprotocol/mina-daemon:latest-mainnet
+  - method: shell
+    command: docker exec -it mina bash   # opens a shell where mina CLI commands are available
+docs: https://docs.minaprotocol.com/node-operators
+command_groups:
+  - group: daemon
+    description: Start, stop, and inspect the Mina daemon.
+    examples: [mina daemon, mina client status, mina client stop-daemon]
+  - group: accounts
+    description: Create, import, unlock, and list wallet accounts.
+    examples: [mina accounts create, mina accounts import, mina accounts list, mina accounts unlock]
+  - group: client
+    description: Send transactions and query node/network state.
+    examples: [mina client send-payment, mina client delegate-stake, mina client status]
+  - group: advanced
+    description: Ledger, snark-worker, and network configuration commands.
+    examples: [mina advanced snark-job-list, mina advanced set-snark-work-fee]
+notes: The GraphQL API at http://localhost:3085/graphql is the programmatic sibling of the CLI.

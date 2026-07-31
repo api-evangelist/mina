@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/* on Mina Protocol hosts
+hosts:
+  - host: https://docs.minaprotocol.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://minaprotocol.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+notes: >-
+  No /.well-known discovery documents are published on the Mina Protocol web or
+  docs hosts. The Mina daemon exposes a GraphQL API bound to localhost (port
+  3085) rather than a hosted, discoverable HTTP surface, so OIDC/OAuth discovery
+  documents are not applicable.

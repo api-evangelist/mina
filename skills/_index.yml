@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: generated
+source: graphql/mina-graphql-schema.json
+skills:
+  - file: mina-query-node-and-account.md
+    name: Query Mina node health and account state
+    api: graphql/mina-graphql-schema.json
+    operations: [daemonStatus, syncStatus, account, bestChain, pooledUserCommands]
+  - file: mina-send-payment.md
+    name: Unlock an account and send a Mina payment
+    api: graphql/mina-graphql-schema.json
+    operations: [unlockAccount, sendPayment, transactionStatus, lockAccount]

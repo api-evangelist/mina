@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.minaprotocol.com/node-developers/sandbox-node
+name: Mina Sandbox Node
+summary: >-
+  A single-node private Mina network packaged with Docker that uses the same
+  configuration as the live testnet. Supports multiple accounts, sending
+  transactions between them, SNARK work, delegating, and staking. Because it is
+  a single-node network the operator earns all block rewards. It does NOT connect
+  to a live network.
+run:
+  tool: docker
+  command: >-
+    docker run --publish 3085:3085 -d --name mina -e RUN_DEMO=true
+    -e MINA_PRIVKEY_PASS='' minaprotocol/mina-daemon:3.3.0-8c0c2e6-bullseye-mainnet
+  graphql_endpoint: http://localhost:3085/graphql
+  graphiql_ide: http://localhost:3085/graphql
+modes:
+  - name: sandbox (RUN_DEMO)
+    description: Local single-node demo network with a built-in block producer and SNARK worker.
+  - name: devnet
+    description: Public Mina test network (Devnet) for integration testing against a shared testnet.
+notes: >-
+  Test values (accounts, keys) are generated locally by the sandbox rather than
+  published as fixed magic identifiers. No hosted sandbox API keys exist because
+  the GraphQL API is bound to localhost.

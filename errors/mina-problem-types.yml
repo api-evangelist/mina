@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: derived
+source: https://docs.minaprotocol.com/node-developers/graphql-api
+format: graphql-errors
+envelope:
+  style: GraphQL top-level errors[] array
+  detail: >-
+    The Mina GraphQL API does not use RFC 9457 problem+json. Failures are
+    returned in the standard GraphQL response `errors` array (each with a
+    `message`, and optional `path`/`locations`), while `data` may be null or
+    partial. Transaction-level failures surface through query fields such as
+    transactionStatus rather than as HTTP error codes.
+problems:
+  - kind: validation
+    title: Invalid GraphQL query
+    detail: Malformed query, unknown field, or type mismatch returns a GraphQL validation error.
+  - kind: authorization
+    title: Account locked
+    detail: Signing mutations (sendPayment, sendDelegation, sendZkapp) fail if the account is locked; unlock with unlockAccount first.
+    source_operation: graphql/mina-graphql-schema.json#sendPayment
+  - kind: transaction
+    title: Transaction rejected
+    detail: Invalid nonce, insufficient balance, or fee below pool minimum causes the transaction to be rejected by the daemon / consensus.
+    source_operation: graphql/mina-graphql-schema.json#transactionStatus
+  - kind: connectivity
+    title: Daemon not synced
+    detail: Queries against an unsynced node may return stale or empty data; check syncStatus / daemonStatus.
+    source_operation: graphql/mina-graphql-schema.json#syncStatus
+notes: >-
+  Derived from the GraphQL API documentation and schema; Mina does not publish a
+  numbered error-code registry.

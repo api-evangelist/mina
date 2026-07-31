@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.minaprotocol.com/network-upgrades
+versioning:
+  scheme: network-upgrade / hard-fork + daemon semver
+  detail: >-
+    Protocol and API changes are delivered through named network upgrades (hard
+    forks) that require all nodes to update; the daemon itself is versioned with
+    semver (e.g. mina-daemon 3.3.0). The docs note "Mina APIs are still under
+    construction, so these endpoints may change."
+  upgrades:
+    - name: Berkeley
+      highlight: Transition to the Berkeley proof system, introducing zkApp support.
+    - name: Mesa
+      highlight: Subsequent mainnet network upgrade.
+  docs: https://docs.minaprotocol.com/network-upgrades
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No formal API deprecation policy or RFC 8594 Sunset/Deprecation header support is documented; API stability is governed by network-upgrade compatibility notes.
+sla:
+  url: null
+  detail: No SLA is published; Mina is a decentralized protocol operated by independent node operators, not a hosted API service.
+status_page: null
+status_note: No hosted status page was found (status.minaprotocol.com does not resolve); network health is observed via block explorers and node dashboards.
+releases: https://github.com/MinaProtocol/mina/releases
