@@ -2,40 +2,44 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: graphql/mina-graphql-schema.json
-notes: >-
-  No official hosted or remote MCP server was found for Mina Protocol. This is a
-  DERIVED candidate tool list mapping the Mina daemon GraphQL API (queries,
-  mutations) to MCP tools. The daemon GraphQL endpoint is bound to localhost:3085
-  by default, so any MCP server would run alongside a local node.
+notes: No official hosted or remote MCP server was found for Mina Protocol. This is a DERIVED candidate
+  tool list mapping the Mina daemon GraphQL API (queries, mutations) to MCP tools. The daemon GraphQL
+  endpoint is bound to localhost:3085 by default, so any MCP server would run alongside a local node.
 server:
   name: mina
   transport: stdio
   url: null
 tools:
-  - name: daemon_status
-    description: Get the running Mina daemon status and sync state.
-    source_operation: graphql/mina-graphql-schema.json#daemonStatus
-  - name: sync_status
-    description: Get the node sync status.
-    source_operation: graphql/mina-graphql-schema.json#syncStatus
-  - name: get_account
-    description: Get account balance, delegate, and nonce by public key.
-    source_operation: graphql/mina-graphql-schema.json#account
-  - name: best_chain
-    description: Return the best chain (recent blocks) known to the daemon.
-    source_operation: graphql/mina-graphql-schema.json#bestChain
-  - name: pooled_user_commands
-    description: List pending transactions in the transaction pool with fees.
-    source_operation: graphql/mina-graphql-schema.json#pooledUserCommands
-  - name: transaction_status
-    description: Get the status of a submitted transaction.
-    source_operation: graphql/mina-graphql-schema.json#transactionStatus
-  - name: send_payment
-    description: Submit a signed payment transaction.
-    source_operation: graphql/mina-graphql-schema.json#sendPayment
-  - name: send_delegation
-    description: Submit a stake delegation transaction.
-    source_operation: graphql/mina-graphql-schema.json#sendDelegation
-  - name: send_zkapp
-    description: Submit a zkApp (smart contract) transaction.
-    source_operation: graphql/mina-graphql-schema.json#sendZkapp
+- name: daemon_status
+  description: Get the running Mina daemon status and sync state.
+  source_operation: graphql/mina-graphql-schema.json#daemonStatus
+- name: sync_status
+  description: Get the node sync status.
+  source_operation: graphql/mina-graphql-schema.json#syncStatus
+- name: get_account
+  description: Get account balance, delegate, and nonce by public key.
+  source_operation: graphql/mina-graphql-schema.json#account
+- name: best_chain
+  description: Return the best chain (recent blocks) known to the daemon.
+  source_operation: graphql/mina-graphql-schema.json#bestChain
+- name: pooled_user_commands
+  description: List pending transactions in the transaction pool with fees.
+  source_operation: graphql/mina-graphql-schema.json#pooledUserCommands
+- name: transaction_status
+  description: Get the status of a submitted transaction.
+  source_operation: graphql/mina-graphql-schema.json#transactionStatus
+- name: send_payment
+  description: Submit a signed payment transaction.
+  source_operation: graphql/mina-graphql-schema.json#sendPayment
+- name: send_delegation
+  description: Submit a stake delegation transaction.
+  source_operation: graphql/mina-graphql-schema.json#sendDelegation
+- name: send_zkapp
+  description: Submit a zkApp (smart contract) transaction.
+  source_operation: graphql/mina-graphql-schema.json#sendZkapp
+deployment:
+  mode: none
+  verified: derived
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census
