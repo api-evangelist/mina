@@ -11,6 +11,17 @@ description: >-
   and Archive Node support exchange integration and historical data. Mina uses
   the Ouroboros Samasika proof-of-stake consensus and is stewarded by the Mina
   Foundation and o1Labs. Surfaced as a portfolio company of pantera-capital.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
