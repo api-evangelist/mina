@@ -1,0 +1,26 @@
+# Front Door AI Index — mina — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: mina
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: minaprotocol.com
+  final_host: minaprotocol.com
+  ownership: shared
+  owner: mina-protocol
+  shares_host_with:
+  - mina-protocol
+  inherited_from: null
+  verdict: silent
+  score: null
+  host_score: 0
+  density: null
+  words: 1133
+  tiers:
+    agentic: 0
+    core: 0
+    model: 0
+  ambiguous: 1
+  top_terms:
+    smart: 1
