@@ -64,6 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Mina is a company surfaced as a portfolio company of pantera-capital and added to the API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting the enrichment pipeline.
+Mina Protocol is a lightweight, layer-1 blockchain powered by zero-knowledge proofs (zk-SNARKs) that keeps the entire chain a constant ~22KB in size so any device can sync and verify the network. Developers build privacy-preserving smart contracts called zkApps using o1js, a TypeScript zk framework, and the mina-signer library for offline transaction signing. Each Mina daemon (node) exposes a GraphQL API on localhost:3085 for querying node/account/chain state and submitting payments, delegations, and zkApp commands; a Rosetta interface and Archive Node support exchange integration and historical data. Mina uses the Ouroboros Samasika proof-of-stake consensus and is stewarded by the Mina Foundation and o1Labs. Surfaced as a portfolio company of pantera-capital.
 
-Backed by: pantera-capital — https://minaprotocol.com/
+**Areas:** Company · Cryptocurrency · Blockchain · Zero Knowledge · zkApps · GraphQL · Web3
+
+## Mina on APIs.io
+
+Everything profiled for Mina is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/mina/](https://apis.io/providers/mina/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Mina Daemon GraphQL API](https://apis.io/apis/mina/mina-daemon-graphql-api/) — GraphQL API exposed by a running Mina daemon (node) for querying node, account, and chain state and submitting payments, delegations, and zkApp…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [mina](https://apis.io/servers/mina/mina/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Mina Authentication](https://apis.io/security/mina/mina-authentication/)
+- [Mina Domain Security](https://apis.io/security/mina/mina-domain-security/)
+- [Mina Vulnerability Disclosure](https://apis.io/security/mina/mina-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://minaprotocol.com/)
+- [Documentation](https://docs.minaprotocol.com/)
+- [Getting started](https://minaprotocol.com/get-started)
+- [Support](https://bit.ly/MinaDiscord)
+- [Blog](https://minaprotocol.com/blog)
+- [Security](https://docs.minaprotocol.com/mina-security)
+- [Terms of service](https://minaprotocol.com/tos)
+- [Privacy policy](https://minaprotocol.com/privacy)
+- [GitHub](https://github.com/MinaProtocol)
+
+## API Evangelist rating
+
+**Kin Score 33.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 80.4 |
+| Access clarity | 21.1 |
+
+**Agent readiness 4.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/mina/](https://apis.io/providers/mina/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Mina: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/mina/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
